@@ -33,3 +33,12 @@ erDiagram
     Appointment }|--|| Pet : includes
     Appointment }|--|| Veterinarian : includes
 ```
+
+## Authors
+
+- Alexandre Junio dos Santos Vieira, RA 2010464
+- Fábio Borges Dias, RA 2007056
+- [Fabio Rogerio Lins Pereira, RA 2003660](https://github.com/frlps)
+- Gustavo Guerreiro Martinho da Cunha Sales, RA 2001642
+- Marcio M. Marcelli, RA 2002829
+- [Rodrigo Cristiano Ferreira Vieira, RA 2015474](https://www.github.com/RCristiano)
