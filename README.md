@@ -43,27 +43,27 @@ classDiagram
         String Phone
         String Address
         String City
-        +getOwner(id)
-        +getPets(id)
-        +addOwner(name, email, phone, address, city)
-        +updateOwner(id, name, email, phone, address, city)
+        +get_owner(id)
+        +get_pets(id)
+        +add_Owner(name, email, phone, address, city)
+        +update_owner(id, name, email, phone, address, city)
     }
     class Pet{
         Int id
         Int owner_id
         String Name
         +getPet(id)
-        +addPet(owner_id, name)
-        +updatePet(id, owner_id, name)
-        +getAppointments(id)
+        +add_pet(owner_id, name)
+        +update_pet(id, owner_id, name)
+        +get_appointments(id)
     }
     class Veterinarian{
         Int id
         String Name
         +getVet(id)
-        +addVeterinarian(name)
-        +updateVeterinarian(id, name)
-        +getAppointments(id)
+        +add_veterinarian(name)
+        +update_veterinarian(id, name)
+        +get_appointments(id)
     }
     class Appointment{
         Int id
@@ -72,14 +72,13 @@ classDiagram
         String Date
         String Time
         String Description
-        +getAppointment(id)
-        +addAppointment(pet_id, vet_id, date, time, description)
-        +updateAppointment(id, pet_id, vet_id, date, time, description)
+        +get_appointment(id)
+        +add_appointment(pet_id, vet_id, date, time, description)
+        +update_appointment(id, pet_id, vet_id, date, time, description)
     }
-    Owner -- Pet
-    Pet -- Veterinarian
-    Appointment -- Pet
-    Appointment -- Veterinarian
+    Owner "1" --> "*" Pet : has
+    Appointment "1" --> "1" Pet : includes
+    Appointment "1" --> "1" Veterinarian : includes
 ```
 
 ## Tech Stack
