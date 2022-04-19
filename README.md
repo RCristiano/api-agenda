@@ -34,6 +34,65 @@ erDiagram
     Appointment }|--|| Veterinarian : includes
 ```
 
+```mermaid
+classDiagram
+    class Owner{
+        Int id
+        String Name
+        String Email
+        String Phone
+        String Address
+        String City
+        +getOwner(id)
+        +getPets(id)
+        +addOwner(name, email, phone, address, city)
+        +updateOwner(id, name, email, phone, address, city)
+    }
+    class Pet{
+        Int id
+        Int owner_id
+        String Name
+        +getPet(id)
+        +addPet(owner_id, name)
+        +updatePet(id, owner_id, name)
+        +getAppointments(id)
+    }
+    class Veterinarian{
+        Int id
+        String Name
+        +getVet(id)
+        +addVeterinarian(name)
+        +updateVeterinarian(id, name)
+        +getAppointments(id)
+    }
+    class Appointment{
+        Int id
+        Int pet_id
+        Int vet_id
+        String Date
+        String Time
+        String Description
+        +getAppointment(id)
+        +addAppointment(pet_id, vet_id, date, time, description)
+        +updateAppointment(id, pet_id, vet_id, date, time, description)
+    }
+    Owner -- Pet
+    Pet -- Veterinarian
+    Appointment -- Pet
+    Appointment -- Veterinarian
+```
+
+## Tech Stack
+
+### Development
+
+- [Git](https://git-scm.com/)
+- [Poetry](https://python-poetry.org/)
+
+### Backend
+
+- [FastAPI](https://fastapi.tiangolo.com/)
+
 ## Run Locally
 
 Clone the project
