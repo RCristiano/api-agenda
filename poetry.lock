@@ -103,6 +103,28 @@ optional = false
 python-versions = ">=3.5"
 
 [[package]]
+name = "isort"
+version = "5.10.1"
+description = "A Python utility / library to sort Python imports."
+category = "dev"
+optional = false
+python-versions = ">=3.6.1,<4.0"
+
+[package.extras]
+pipfile_deprecated_finder = ["pipreqs", "requirementslib"]
+requirements_deprecated_finder = ["pipreqs", "pip-api"]
+colors = ["colorama (>=0.4.3,<0.5.0)"]
+plugins = ["setuptools"]
+
+[[package]]
+name = "mimesis"
+version = "5.3.0"
+description = "Mimesis: Fake Data Generator."
+category = "dev"
+optional = false
+python-versions = ">=3.8,<4.0"
+
+[[package]]
 name = "pycodestyle"
 version = "2.8.0"
 description = "Python style guide checker"
@@ -240,7 +262,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "a252acd70531d1a1ff42538b45706112ab9fae076b034113293e24cc7805fb86"
+content-hash = "1549eab55635058ac7d50475c04bb1713a31170bf3c2cb2eacd1c522fb7d4c25"
 
 [metadata.files]
 anyio = [
@@ -310,6 +332,14 @@ httptools = [
 idna = [
     {file = "idna-3.3-py3-none-any.whl", hash = "sha256:84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"},
     {file = "idna-3.3.tar.gz", hash = "sha256:9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"},
+]
+isort = [
+    {file = "isort-5.10.1-py3-none-any.whl", hash = "sha256:6f62d78e2f89b4500b080fe3a81690850cd254227f27f75c3a0c491a1f351ba7"},
+    {file = "isort-5.10.1.tar.gz", hash = "sha256:e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"},
+]
+mimesis = [
+    {file = "mimesis-5.3.0-py3-none-any.whl", hash = "sha256:f3a1c27bc12b558d4372a2747b86e6519a4b1916130e8b71f058b76d47ebd9f0"},
+    {file = "mimesis-5.3.0.tar.gz", hash = "sha256:69be5a26e1cfbe756bb2e80dbe5ae3a401ea3e27ddca2f963b4a1490e2fec24e"},
 ]
 pycodestyle = [
     {file = "pycodestyle-2.8.0-py2.py3-none-any.whl", hash = "sha256:720f8b39dde8b293825e7ff02c475f3077124006db4f440dcbc9a20b76548a20"},
