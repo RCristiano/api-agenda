@@ -45,7 +45,7 @@ classDiagram
         String City
         +get_owner(id)
         +get_pets(id)
-        +add_Owner(name, email, phone, address, city)
+        +add_owner(name, email, phone, address, city)
         +update_owner(id, name, email, phone, address, city)
     }
     class Pet{
@@ -86,6 +86,7 @@ classDiagram
 ### Development
 
 - [Git](https://git-scm.com/)
+- Python ^3.10
 - [Poetry](https://python-poetry.org/)
 
 ### Backend
