@@ -34,6 +34,44 @@ erDiagram
     Appointment }|--|| Veterinarian : includes
 ```
 
+## Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/RCristiano/agente-agenda
+```
+
+Go to the project directory
+
+```bash
+cd agente-agenda
+```
+
+Install dependencies
+
+```bash
+poetry install
+```
+
+Start the server
+
+```bash
+poetry run uvicorn main:app --reload
+```
+
+### Live server
+
+Open your browser at http://127.0.0.1:8000.
+
+### Interactive API docs
+
+Go to http://127.0.0.1:8000/docs.
+
+### Alternative API docs
+
+And now, go to http://127.0.0.1:8000/redoc.
+
 ## Authors
 
 - Alexandre Junio dos Santos Vieira, RA 2010464
