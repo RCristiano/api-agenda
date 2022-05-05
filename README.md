@@ -86,12 +86,16 @@ classDiagram
 ### Development
 
 - [Git](https://git-scm.com/)
-- Python ^3.10
+- [Python](https://www.python.org/) >= 3.10
 - [Poetry](https://python-poetry.org/)
 
 ### Backend
 
 - [FastAPI](https://fastapi.tiangolo.com/)
+
+### Security
+
+- [JWT](https://jwt.io/)
 
 ## Run Locally
 
@@ -121,21 +125,22 @@ poetry run uvicorn main:app --reload
 
 ### Live server
 
-Open your browser at http://127.0.0.1:8000.
+Open your browser at <http://127.0.0.1:8000>.
 
 ### Interactive API docs
 
-Go to http://127.0.0.1:8000/docs.
+Go to <http://127.0.0.1:8000/docs>.
 
 ### Alternative API docs
 
-And now, go to http://127.0.0.1:8000/redoc.
+And now, go to <http://127.0.0.1:8000/redoc>.
 
 ## Authors
 
 - Alexandre Junio dos Santos Vieira, RA 2010464
 - Fábio Borges Dias, RA 2007056
-- [Fabio Rogerio Lins Pereira, RA 2003660](https://github.com/frlps)
+- [Fabio Rogerio Lins Pereira de Souza](https://github.com/frlps), RA 2003660
 - Gustavo Guerreiro Martinho da Cunha Sales, RA 2001642
 - Marcio M. Marcelli, RA 2002829
-- [Rodrigo Cristiano Ferreira Vieira, RA 2015474](https://www.github.com/RCristiano)
+- [Rodrigo Cristiano Ferreira Vieira](https://www.github.com/RCristiano), RA 2015474
+- Vanderlei Claudio, RA 1827341
