@@ -7,6 +7,7 @@ authors = ["Rodrigo Cristiano"]
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.75.2"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"
