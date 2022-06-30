@@ -21,23 +21,36 @@ erDiagram
     int id PK "Primary Key"
         string name "Veterinarian name"
     }
-    Appointment {
+    Chart {
         int id PK "Primary Key"
         int pet_id FK "Foreign Key"
         int vet_id FK "Foreign Key"
-        string date "Appointment date"
-        string time "Appointment time"
-        string description "Appointment description"
+        string date "chart date"
+        string time "chart time"
+        string description "chart description"
     }
     Owner ||--|{ Pet : has
-    Appointment }|--|| Pet : includes
-    Appointment }|--|| Veterinarian : includes
+    Chart }|--|| Pet : includes
+    Chart }|--|| Veterinarian : includes
 ```
 
 ```mermaid
 classDiagram
+    class Application{
+        Int id
+        Int owner_id
+        Int pet_id
+        Enum status
+        String Description
+        +insert_application(pet_id, status, Description)
+        +get_application(id)
+        +update_application(id, status, Description)
+        +status_update(id, status)
+    }
     class Owner{
         Int id
+        int cpf
+        String password
         String Name
         String Email
         String Phone
@@ -52,33 +65,40 @@ classDiagram
         Int id
         Int owner_id
         String Name
+        DateTime birth
+        Enum species
         +getPet(id)
         +add_pet(owner_id, name)
         +update_pet(id, owner_id, name)
-        +get_appointments(id)
+        +get_charts(id)
     }
-    class Veterinarian{
-        Int id
-        String Name
-        +getVet(id)
-        +add_veterinarian(name)
-        +update_veterinarian(id, name)
-        +get_appointments(id)
-    }
-    class Appointment{
+    class Chart{
         Int id
         Int pet_id
-        Int vet_id
-        String Date
-        String Time
-        String Description
-        +get_appointment(id)
-        +add_appointment(pet_id, vet_id, date, time, description)
-        +update_appointment(id, pet_id, vet_id, date, time, description)
+        +get_chart(id)
+        +add_chart(pet_id, vet_id, date, time, description)
+        +update_chart(id, pet_id, vet_id, date, time, description)
     }
+    class Exam{
+        Int id
+        Int chart_id
+        String Doctor
+        DateTime execution_date
+        String type
+        String file_link
+        +insert(chart_id, Doctor, execution_date, type, file_link)
+    }
+    class Pathology{
+        Int id
+        Int chart_id
+        String Description
+        +insert(chart_id, Description)
+    }
+    Application "N" --> "1" Pet
     Owner "1" --> "*" Pet : has
-    Appointment "1" --> "1" Pet : includes
-    Appointment "1" --> "1" Veterinarian : includes
+    Chart "1" --> "1" Pet : includes
+    Chart "1" --> "*" Exam
+    Chart "1" --> "*" Pathology
 ```
 
 ## Tech Stack
