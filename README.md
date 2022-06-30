@@ -1,38 +1,8 @@
 # API Agenda
 
-Api de agendamento veterinário
+Api de analise veterinária
 
-```mermaid
-erDiagram
-    Owner {
-        int id PK "Primary Key"
-        string name "Owner name"
-        string email "Owner email"
-        string phone "Owner phone"
-        string address "Owner address"
-        string city "Owner city"
-    }
-    Pet {
-        int id PK "Primary Key"
-        int owner_id FK "Foreign Key"
-        string name "Pet name"
-    }
-    Veterinarian {
-    int id PK "Primary Key"
-        string name "Veterinarian name"
-    }
-    Chart {
-        int id PK "Primary Key"
-        int pet_id FK "Foreign Key"
-        int vet_id FK "Foreign Key"
-        string date "chart date"
-        string time "chart time"
-        string description "chart description"
-    }
-    Owner ||--|{ Pet : has
-    Chart }|--|| Pet : includes
-    Chart }|--|| Veterinarian : includes
-```
+## Diagrama de classes
 
 ```mermaid
 classDiagram
@@ -99,6 +69,40 @@ classDiagram
     Chart "1" --> "1" Pet : includes
     Chart "1" --> "*" Exam
     Chart "1" --> "*" Pathology
+```
+
+## Diagrama de entidade e relacionamento (incompleto)
+
+```mermaid
+erDiagram
+    Owner {
+        int id PK "Primary Key"
+        string name "Owner name"
+        string email "Owner email"
+        string phone "Owner phone"
+        string address "Owner address"
+        string city "Owner city"
+    }
+    Pet {
+        int id PK "Primary Key"
+        int owner_id FK "Foreign Key"
+        string name "Pet name"
+    }
+    Veterinarian {
+    int id PK "Primary Key"
+        string name "Veterinarian name"
+    }
+    Chart {
+        int id PK "Primary Key"
+        int pet_id FK "Foreign Key"
+        int vet_id FK "Foreign Key"
+        string date "chart date"
+        string time "chart time"
+        string description "chart description"
+    }
+    Owner ||--|{ Pet : has
+    Chart }|--|| Pet : includes
+    Chart }|--|| Veterinarian : includes
 ```
 
 ## Tech Stack
