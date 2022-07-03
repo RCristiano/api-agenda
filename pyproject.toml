@@ -8,6 +8,7 @@ authors = ["Rodrigo Cristiano"]
 python = "^3.10"
 fastapi = "^0.75.2"
 python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+SQLAlchemy = "^1.4.36"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"
