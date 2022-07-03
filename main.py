@@ -72,7 +72,8 @@ def get_application(application_id: int):
 @app.get("/applications", dependencies=[Security(validate_jwt)], summary="Get all application", tags=["Application"])
 def get_application():
     fake = mimesis.Person()
-    return Owner(id=application_id, name=fake.full_name(), age=fake.age())]
+    return Owner(id=application_id, name=fake.full_name(), age=fake.age())
+
 
 class Owner(BaseModel):
     id: int
@@ -91,13 +92,13 @@ class Owner(BaseModel):
 
 @ app.get("/owners", dependencies=[Security(validate_jwt)], summary="Get all owners", tags=["Owner"])
 def list_owners():
-    owner= mimesis.Person()
+    owner = mimesis.Person()
     return [Owner(id=i, name=owner.full_name(), age=owner.age()) for i in range(1, 5)]
 
 
 @ app.get("/owners/{owner_id}", dependencies=[Security(validate_jwt)], summary="Get Owner", tags=["Owner"])
 def get_owner(owner_id: int):
-    fake= mimesis.Person()
+    fake = mimesis.Person()
     return Owner(id=owner_id, name=fake.full_name(), age=fake.age())
 
 
