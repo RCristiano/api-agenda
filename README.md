@@ -161,7 +161,7 @@ And now, go to <http://127.0.0.1:8000/redoc>.
 
 ## Authors
 
-- Alexandre Junio dos Santos Vieira, RA 2010464
+- [Alexandre Junio dos Santos Vieira](https://github.com/alexandrejsv), RA 2010464
 - Fábio Borges Dias, RA 2007056
 - [Fabio Rogerio Lins Pereira de Souza](https://github.com/frlps), RA 2003660
 - Gustavo Guerreiro Martinho da Cunha Sales, RA 2001642
