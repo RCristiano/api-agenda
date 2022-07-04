@@ -8,7 +8,6 @@ Api de analise veterinária
 classDiagram
     class Application{
         Int id
-        Int owner_id
         Int pet_id
         Enum status
         String Description
@@ -16,6 +15,7 @@ classDiagram
         +get_application(id)
         +update_application(id, status, Description)
         +status_update(id, status)
+        +get_applications()
     }
     class Owner{
         Int id
@@ -27,7 +27,7 @@ classDiagram
         String Address
         String City
         +get_owner(id)
-        +get_pets(id)
+        +get_pets_by_owner(id)
         +add_owner(name, email, phone, address, city)
         +update_owner(id, name, email, phone, address, city)
     }
@@ -121,6 +121,8 @@ erDiagram
 
 - [JWT](https://jwt.io/)
 
+- **temp token:** eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.XbPfbIHMI6arZ3Y922BhjWgQzWXcXNrz0ogtVhfEd2o
+
 ## Run Locally
 
 Clone the project
@@ -144,7 +146,7 @@ poetry install
 Start the server
 
 ```bash
-poetry run uvicorn main:app --reload
+poetry run uvicorn app.main:app --reload
 ```
 
 ### Live server
