@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "/home/rcristiano/.local/share/lutris/pga.db",
+            "name": "Lutris"
+        },
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:api-agenda}/sql_app.db",
+            "name": "api-agendavet"
+        }
+    ]
+}
