@@ -11,7 +11,6 @@ ALGORITHM = "HS256"
 def validate_jwt(
     token: HTTPAuthorizationCredentials = Depends(HTTPBearer()),
 ) -> dict:
-    return True
     try:
         return jwt.decode(token.credentials, SECRET_KEY,
                           algorithms=[ALGORITHM])
