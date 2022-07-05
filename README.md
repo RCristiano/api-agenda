@@ -110,10 +110,10 @@ erDiagram
 ### Development
 
 - [Git](https://git-scm.com/)
-- [Python](https://www.python.org/) >= 3.10
+- [Python](https://www.python.org/)
 - [Poetry](https://python-poetry.org/)
 
-### Backend
+### Framework
 
 - [FastAPI](https://fastapi.tiangolo.com/)
 
