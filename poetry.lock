@@ -387,7 +387,7 @@ standard = ["websockets (>=10.0)", "httptools (>=0.4.0)", "watchgod (>=0.6)", "p
 name = "uvloop"
 version = "0.16.0"
 description = "Fast implementation of asyncio event loop on top of libuv"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -418,7 +418,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "3.10.5"
-content-hash = "2f000f73d6aedda566fd061b4e15fb2f9fa7f55b63084588973deb7a2473a289"
+content-hash = "5851933e87d47652fa89e1232813640034ce04eebe9dc04f430ca99f7ae57f7a"
 
 [metadata.files]
 anyio = [
