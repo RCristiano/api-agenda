@@ -187,14 +187,6 @@ colors = ["colorama (>=0.4.3,<0.5.0)"]
 plugins = ["setuptools"]
 
 [[package]]
-name = "mimesis"
-version = "5.5.0"
-description = "Mimesis: Fake Data Generator."
-category = "dev"
-optional = false
-python-versions = ">=3.8,<4.0"
-
-[[package]]
 name = "pyasn1"
 version = "0.4.8"
 description = "ASN.1 types and codecs"
@@ -418,7 +410,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "3.10.5"
-content-hash = "2f000f73d6aedda566fd061b4e15fb2f9fa7f55b63084588973deb7a2473a289"
+content-hash = "8093c9792565fdbc1c2e117b70265ae4789089d2a63d4522df6bd13cb2d109a6"
 
 [metadata.files]
 anyio = [
@@ -647,10 +639,6 @@ idna = [
 isort = [
     {file = "isort-5.10.1-py3-none-any.whl", hash = "sha256:6f62d78e2f89b4500b080fe3a81690850cd254227f27f75c3a0c491a1f351ba7"},
     {file = "isort-5.10.1.tar.gz", hash = "sha256:e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"},
-]
-mimesis = [
-    {file = "mimesis-5.5.0-py3-none-any.whl", hash = "sha256:a717bf6ae712a8e1cec59237a975d87f9c04321322e7d7ca3c6cfe99060b1914"},
-    {file = "mimesis-5.5.0.tar.gz", hash = "sha256:0fa83814359be0465f0fdbf0595b87225fa533167330121a2831a3e928a73ac5"},
 ]
 pyasn1 = [
     {file = "pyasn1-0.4.8-py2.4.egg", hash = "sha256:fec3e9d8e36808a28efb59b489e4528c10ad0f480e57dcc32b4de5c9d8c9fdf3"},
