@@ -11,9 +11,9 @@ class Status(enum.Enum):
 
 
 class ApplicationBase(BaseModel):
-    pet_id: int
-    status: Status
-    description: str
+    pet_id: int | None
+    status: Status | None
+    description: str | None
 
 
 class Application(ApplicationBase):

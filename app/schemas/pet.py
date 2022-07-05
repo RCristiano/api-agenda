@@ -2,11 +2,10 @@ from pydantic import BaseModel
 
 
 class PetCreate(BaseModel):
-    id: int
-    owner_id: int
-    Name: str
-    birth: str
-    species: str
+    owner_id: int | None
+    name: str | None
+    birth: str | None
+    species: str | None
 
 
 class Pet(PetCreate):
