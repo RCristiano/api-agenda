@@ -161,6 +161,10 @@ Go to <http://127.0.0.1:8000/docs>.
 
 And now, go to <http://127.0.0.1:8000/redoc>.
 
+## Heroku deploy
+
+<https://api-agendavet.herokuapp.com/>
+
 ## Authors
 
 - [Alexandre Junio dos Santos Vieira](https://github.com/alexandrejsv), RA 2010464
