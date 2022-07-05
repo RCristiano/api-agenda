@@ -1,7 +1,8 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Security
 
 from app import models
 from app.routers import application, owner, pet
+from app.security import validate_jwt
 
 from .database import engine
 
@@ -19,34 +20,18 @@ def read_root(request: Request):
     }
 
 
-app.include_router(application.router, tags=["Application"])
-app.include_router(owner.router, tags=["Owner"])
-app.include_router(pet.router, tags=["Pet"])
-# app.include_router(pet.router, tags=["Pet"])
-# app.include_router(pet.router, tags=["Pet"])
-# app.include_router(pet.router, tags=["Pet"])
-
-
-# class Chart(BaseModel):
-#     id: int
-#     pet_id: int
-#     # +get_chart(id)
-#     # +add_chart(pet_id, vet_id, date, time, description)
-#     # +update_chart(id, pet_id, vet_id, date, time, description)
-
-
-# class Exam(BaseModel):
-#     id: int
-#     chart_id: int
-#     Doctor: str
-#     execution_date: datetime
-#     type: str
-#     file_link: str
-#     # +insert(chart_id, Doctor, execution_date, type, file_link)
-
-
-# class Pathology(BaseModel):
-#     id: int
-#     chart_id: int
-#     description: str
-#     # +insert(chart_id, description)
+app.include_router(
+    application.router,
+    tags=["Application"],
+    dependencies=[Security(validate_jwt)]
+)
+app.include_router(
+    owner.router,
+    tags=["Owner"],
+    dependencies=[Security(validate_jwt)]
+)
+app.include_router(
+    pet.router,
+    tags=["Pet"],
+    dependencies=[Security(validate_jwt)]
+)

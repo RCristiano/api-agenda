@@ -1,39 +1,52 @@
-from fastapi import APIRouter, Security
+from fastapi import APIRouter
 
-from app import models
 from app.database import Session
-from app.schemas.application import Application, ApplicationBase, Status
-from app.security import validate_jwt
+from app.models import Application
+from app.schemas.application import Application as Response_Application
+from app.schemas.application import ApplicationBase, Status
 
 router = APIRouter()
 
 
-@router.post("/application", dependencies=[Security(validate_jwt)], summary="Request a application", tags=["Application"])
-def submit_application(application: ApplicationBase):
+@router.post("/application", summary="Request a application", response_model=Response_Application)
+def request_application(owner: ApplicationBase) -> Response_Application:
     with Session() as db:
-        db_application = models.Application(
-            pet_id=application.pet_id, status=application.status, description=application.description)
+        db_application = Application(**owner.dict())
         db.add(db_application)
+        db.commit()
         db.refresh(db_application)
         return db_application
 
 
-@router.get("/applications/{application_id}", dependencies=[Security(validate_jwt)], summary="Get application by id", tags=["Application"])
+@router.get("/applications/{application_id}", summary="Get application by id")
 def get_application(application_id: int):
     with Session() as db:
-        return db.query(models.Application).filter(models.Application.id == application_id).first()
+        return db.query(Application).filter(Application.id == application_id).first()
 
 
-@router.get("/applications", dependencies=[Security(validate_jwt)], summary="Get all application", tags=["Application"])
+@router.get("/applications", summary="Get all application", response_model=list[Response_Application])
 def get_application():
-    return Application()
+    with Session() as db:
+        return db.query(Application).all()
 
 
-@router.put("/applications/update", dependencies=[Security(validate_jwt)], summary="Update application", tags=["Application"])
-def update_application(application: Application) -> Application:
-    return application
+@router.put("/applications/{application_id}/update", summary="Update application", response_model=Response_Application)
+def update_application(application_id: int, application: ApplicationBase) -> Response_Application:
+    with Session() as db:
+        db_application = db.query(Application).get(application_id)
+        for key, value in application:
+            if value:
+                setattr(db_application, key, value)
+        db.commit()
+        db.refresh(db_application)
+        return db_application
 
 
-@router.put("/applications/{application_id}/status_update", dependencies=[Security(validate_jwt)], summary="Update status application", tags=["Application"])
+@router.put("/applications/{application_id}/status_update", summary="Update status application")
 def update_status_application(application_id: int, status: Status) -> Application:
-    return Application
+    with Session() as db:
+        db_application = db.query(Application).get(application_id)
+        db_application.status = status
+        db.commit()
+        db.refresh(db_application)
+        return db_application
