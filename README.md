@@ -128,7 +128,7 @@ erDiagram
 Clone the project
 
 ```bash
-git clone https://github.com/RCristiano/agente-agenda
+git clone https://github.com/RCristiano/api-agendavet.git
 ```
 
 Go to the project directory
