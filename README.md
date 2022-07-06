@@ -1,6 +1,6 @@
 # API Agenda
 
-[![Heroku](https://heroku-badge.herokuapp.com/?app=api-agendavet&style=flat&svg=1&root=apidocs)](https://api-agendavet.herokuapp.com/)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=api-agendavet)](https://api-agendavet.herokuapp.com/)
 
 Api de analise veterinária
 
